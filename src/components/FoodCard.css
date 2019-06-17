@@ -1,0 +1,37 @@
+.foodcard {
+  /* background-image: url("http://static.food2fork.com/MacandCheese1122b.jpg");
+  background-size: cover; */
+  width: 80vw;
+  height: 60vh;
+  overflow: hidden;
+  border-radius: 1rem;
+  position: relative;
+  margin: 25% auto;
+}
+
+.details {
+  margin: 1.5em 1.5em;
+}
+
+.details-container {
+  position: absolute;
+  bottom: 0;
+  width: inherit;
+  background-image: linear-gradient(to bottom, #00000000, #00000060);
+  padding-top: 80px;
+}
+
+.details .title {
+  color: #fff;
+  margin-bottom: 0;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.details .desc {
+  margin-top: 4px;
+  margin-bottom: 0;
+  color: #ffffff;
+  opacity: 0.9;
+  font-size: 14px;
+}
