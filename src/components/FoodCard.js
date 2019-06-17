@@ -2,7 +2,7 @@ import React from "react";
 import "./FoodCard.css";
 
 const FoodCard = ({ cardData }) => {
-  const { id, image, title, desc } = cardData;
+  const { image, title, desc } = cardData;
 
   return (
     <div

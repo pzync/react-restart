@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import FoodCard from "./components/FoodCard";
+import AppHeader from "./components/AppHeader";
 
 function App() {
   const [state, setState] = useState({
@@ -31,11 +32,14 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Your Cards</h2>
-
-      {state.foodItems.map(foodItem => (
-        <FoodCard cardData={foodItem} />
-      ))}
+      <AppHeader />
+      <div className="card-container">
+        {state.foodItems.map(foodItem => (
+          <div key={foodItem.id} className="single-card">
+            <FoodCard cardData={foodItem} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
