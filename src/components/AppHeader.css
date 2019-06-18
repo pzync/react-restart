@@ -1,3 +1,8 @@
 .app-header {
   margin-left: 6vw;
 }
+
+.app-header h1 {
+  font-weight: 900;
+  color: #222222;
+}

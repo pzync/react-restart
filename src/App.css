@@ -1,8 +1,19 @@
-.App {
-  overflow: hidden;
+.card-container {
+  position: relative;
+  margin: 30% 10vw;
 }
 
-.card-container {
+.single-card {
+  position: absolute;
+}
+
+/* The following CSS is for when we wanna display it as a horizontal scroll 
+with one card at a time */
+
+/* .App {
+  overflow: hidden;
+} 
+ .card-container {
   margin-top: 25%;
   padding-left: 8vw;
   width: 100%;
@@ -13,4 +24,4 @@
 
 .single-card:last-child {
   padding-right: 8vw;
-}
+} */

@@ -35,7 +35,16 @@ function App() {
       <AppHeader />
       <div className="card-container">
         {state.foodItems.map(foodItem => (
-          <div key={foodItem.id} className="single-card">
+          <div
+            key={foodItem.id}
+            className="single-card"
+            style={{
+              zIndex: `${100 - foodItem.id}`,
+              top: `${-30 * foodItem.id}px`,
+              transform: `scale(${1 - 0.1 * foodItem.id})`,
+              opacity: `${1 - 0.3 * foodItem.id}`
+            }}
+          >
             <FoodCard cardData={foodItem} />
           </div>
         ))}
