@@ -3,21 +3,28 @@ import "./App.css";
 import FoodCard from "./components/FoodCard";
 import AppHeader from "./components/AppHeader";
 
-const API_KEY = `38348c8d8e6066fe42fcd7fb4a2375bc`;
+const API_KEY = `22bb85986e161bafa350f51ba4c4c0a4`;
 
-function App() {
-  const [state, setState] = useState([]);
+const useAPI = (searchTerm, count) => {
+  const [apidata, setApiData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       const response = await fetch(
-        `https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=banana&count=3`
+        `https://cors-anywhere.herokuapp.com/https://www.food2fork.com/api/search?key=${API_KEY}&q=${searchTerm}&count=${count}`
       );
       const data = await response.json();
-      setState(data.recipes);
+      setApiData(data.recipes);
     };
     fetchData();
-  }, []);
+  }, [searchTerm, count]);
+  /* Reference for this https://reactjs.org/docs/hooks-effect.html#tip-optimizing-performance-by-skipping-effects */
+
+  return apidata;
+};
+
+function App() {
+  const state = useAPI(`cheese`, 4);
 
   return (
     <div className="App">
